@@ -424,7 +424,7 @@ export default function App() {
                   github: "https://github.com/VENKATARAMANA-T/WanderLust-Project" 
                 },
                 { 
-                  title: "Weather-App-By-React", 
+                  title: "City-Based Weather Information", 
                   desc: "A React-based Weather App using an API to display real-time temperature, humidity, and conditions. Includes City Name Validation." ,
                   tech: ["React js", "HTML", "CSS", "JavaScript"], 
                   img: Weather, 
@@ -445,7 +445,7 @@ export default function App() {
                     <img src={project.img} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                   <div className="p-6">
-                    <h3 className={`text-xl font-bold mb-2 transition-colors ${isDarkMode ? 'group-hover:text-blue-600' : 'group-hover:text-teal-700 text-slate-900'}`}>{project.title}</h3>
+                    <h3 className={`text-xl font-bold mb-2 transition-colors ${isDarkMode ? 'group-hover:text-blue-600' : 'group-hover:text-teal-700 text-slate-900'} `}>{project.title}</h3>
                     <p className={`text-sm mb-4 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>{project.desc}</p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.tech.map((t, i) => (
