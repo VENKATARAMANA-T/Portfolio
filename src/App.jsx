@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 
 import image from './assets/img1.jpg';
-import resume from './assets/Venkataramana_T_resume.pdf'
+import resume from './assets/T_Venkataramana_dev_resume.pdf'
 import Disaster from './assets/Disaster.png';
 import WanderLust from './assets/WanderLust.png';
 import Weather from './assets/Weather.png';
@@ -118,18 +118,34 @@ export default function App() {
     { name: "C++", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
     { name: "Python", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
     { name: "Java", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+    { name: "C", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
+    { name: "Go", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
     { name: "JavaScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
     { name: "React", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "Redux Toolkit", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+    { name: "React Native", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
     { name: "Node.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
     { name: "Express", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+    { name: "Django", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+    { name: "FastAPI", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
     { name: "MongoDB", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
     { name: "MySQL", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
     { name: "HTML5", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
     { name: "CSS3", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
     { name: "Bootstrap", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+    { name: "Tailwind", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
+    { name: "EJS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+    { name: "REST APIs", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
     { name: "Git", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+    { name: "GitHub", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+    { name: "Docker", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+    { name: "CI/CD", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" },
+    { name: "Kubernetes", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" },
     { name: "Tableau", img: "https://cdn.worldvectorlogo.com/logos/tableau-software.svg" },
+    { name: "NumPy", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" },
     { name: "Pandas", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" }
+    ,{ name: "Matplotlib", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" }
+    ,{ name: "Seaborn", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" }
   ];
 
     // Simple email format validation
@@ -438,6 +454,46 @@ export default function App() {
                   img:Disaster, 
                   link: "https://github.com/VENKATARAMANA-T/Disaster-Response-System", 
                   github: "https://github.com/VENKATARAMANA-T/Disaster-Response-System" 
+                },
+                {
+                  title: "Full-Stack AI Chat Application",
+                  desc: "Built a real-time multi-thread chat app with persistent conversations, Google OAuth + JWT auth, document processing, and responsive dark/light UI.",
+                  tech: ["React", "Node.js", "Express", "MongoDB", "Google OAuth", "Gemini API"],
+                  img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+                  link: "https://github.com/VENKATARAMANA-T/AI-Web-Chatbot-for-Personalized-Conversations",
+                  github: "https://github.com/VENKATARAMANA-T/AI-Web-Chatbot-for-Personalized-Conversations"
+                },
+                {
+                  title: "Real-Time Collaborative Digital Canvas",
+                  desc: "Engineered a collaborative canvas platform with live sync, WebRTC meetings, role-based access, JWT auth, and AI-assisted workflows.",
+                  tech: ["Socket.io", "WebRTC", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Cloudinary", "RAG"],
+                  img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+                  link: "https://youtu.be/0BK6py93VlA",
+                  github: "https://github.com/VENKATARAMANA-T/Real-Time-Collaborative-Digital-Canvas"
+                },
+                {
+                  title: "EmpSphere - Employee Intelligence Platform",
+                  desc: "Production-grade React 19 app for employee intelligence with secure auth, analytics dashboard, camera capture, and interactive geolocation maps.",
+                  tech: ["React 19", "Redux Toolkit", "React Router", "Tailwind CSS", "Bootstrap", "Recharts", "Leaflet", "Framer Motion"],
+                  img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+                  link: "https://github.com/VENKATARAMANA-T/Employee-App",
+                  github: "https://github.com/VENKATARAMANA-T/Employee-App"
+                },
+                {
+                  title: "MathSense Journey",
+                  desc: "Multi-sensory math learning platform for children with ASD, featuring interactive learning islands, progress tracking, and calm accessible experiences.",
+                  tech: ["React", "Vite", "Tailwind CSS", "React Router", "Framer Motion", "Web Audio API"],
+                  img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
+                  link: "https://github.com/VENKATARAMANA-T/MathSense-Journey.git",
+                  github: "https://github.com/VENKATARAMANA-T/MathSense-Journey.git"
+                },
+                {
+                  title: "Wardrobe Wonder - Kids Clothing Learning App",
+                  desc: "Interactive children learning app with clothing exploration, quizzes, dress-up activities, and speech-enabled guidance in a sensory-friendly flow.",
+                  tech: ["React", "Vite", "Tailwind CSS", "Web Speech API", "React Router"],
+                  img: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80",
+                  link: "https://github.com/VENKATARAMANA-T/Wardrobe-Wonder-Children-s-Clothing-Learning-App",
+                  github: "https://github.com/VENKATARAMANA-T/Wardrobe-Wonder-Children-s-Clothing-Learning-App"
                 }
               ].map((project, index) => (
                 <div key={index} className={`group rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 ${isDarkMode ? 'bg-slate-900 border border-white/10' : 'bg-white border border-teal-100 hover:shadow-2xl hover:shadow-emerald-500/10'}`}>
@@ -481,11 +537,18 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <RevealOnScroll>
             <div className="text-center mb-10 md:mb-16">
-              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Experience & Education</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Experience</h2>
               <div className={`w-20 h-1 mx-auto rounded-full ${isDarkMode ? 'bg-gradient-to-r from-blue-500 to-teal-400' : 'bg-gradient-to-r from-emerald-500 to-teal-500'}`}></div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
+                {
+                  type: "work",
+                  title: "Full Stack Development Intern",
+                  place: "Arya Club",
+                  date: "Dec 2025 - Present",
+                  desc: "Built a centralized platform with a high-performance responsive UI, and developed a secure backend with optimized database indexing to reduce latency and improve scalability."
+                },
                 { type: "work", title: "Research Scholar - Data Analyst", place: "Coimbatore, Tamil Nadu", date: "Aug 2024 - Apr 2025", desc: "Analyzed forest and tree types across India to study CO2 sequestration potential. Used Matplotlib, Seaborn, and Tableau for visualization." }
               ].map((item, index) => (
                 <div key={index} className={`p-6 rounded-xl border transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
