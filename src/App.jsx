@@ -626,7 +626,7 @@ export default function App() {
               <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Experience</h2>
               <div className={`w-20 h-1 mx-auto rounded-full ${isDarkMode ? 'bg-gradient-to-r from-blue-500 to-teal-400' : 'bg-gradient-to-r from-emerald-500 to-teal-500'}`}></div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
                   type: "work",
@@ -641,13 +641,6 @@ export default function App() {
                   place: "Amrita TAG, Coimbatore",
                   date: "Aug 2024 - Apr 2025",
                   desc: "Processed and visualized Indian forest records using Matplotlib, Seaborn and Tableau, quantifying CO2 sequestration across diverse biomes. Recommended suitable tree species for regional carbon absorption and sustainable management."
-                },
-                {
-                  type: "education",
-                  title: "B.Tech - Computer Science & Engineering",
-                  place: "Amrita Vishwa Vidyapeetham, Coimbatore",
-                  date: "2023 - 2027",
-                  desc: "CGPA 8.99/10. Coursework in Data Structures & Algorithms, DBMS, OOPS, Operating Systems, Computer Networks, Machine Learning and Software Development."
                 }
               ].map((item, index) => (
                 <div key={index} className={`p-6 rounded-xl border transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
