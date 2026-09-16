@@ -16,10 +16,13 @@ import {
   MapPin,
   ArrowRight,
   Phone,
+  Trophy,
+  Award,
+  Code2,
 } from 'lucide-react';
 
 import image from './assets/img1.jpg';
-import resume from './assets/T_Venkataramana_dev_resume.pdf'
+import resume from './assets/TVenkataramanaResume.pdf'
 import Disaster from './assets/Disaster.png';
 import WanderLust from './assets/WanderLust.png';
 import Weather from './assets/Weather.png';
@@ -82,7 +85,7 @@ export default function App() {
   // Smooth Scroll
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'achievements', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -110,43 +113,93 @@ export default function App() {
     { name: 'Skills', id: 'skills' },
     { name: 'Projects', id: 'projects' },
     { name: 'Experience', id: 'experience' },
+    { name: 'Achievements', id: 'achievements' },
     { name: 'Contact', id: 'contact' },
   ];
 
-  // Updated Skills from Resume
-  const skills = [
-    { name: "C++", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
-    { name: "Python", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-    { name: "Java", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-    { name: "C", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
-    { name: "Go", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
-    { name: "JavaScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-    { name: "React", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-    { name: "Redux Toolkit", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
-    { name: "React Native", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-    { name: "Node.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-    { name: "Express", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-    { name: "Django", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
-    { name: "FastAPI", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
-    { name: "MongoDB", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-    { name: "MySQL", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-    { name: "HTML5", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-    { name: "CSS3", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-    { name: "Bootstrap", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-    { name: "Tailwind", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
-    { name: "EJS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-    { name: "REST APIs", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-    { name: "Git", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-    { name: "GitHub", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-    { name: "Docker", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-    { name: "CI/CD", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" },
-    { name: "Kubernetes", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" },
-    { name: "Tableau", img: "https://cdn.worldvectorlogo.com/logos/tableau-software.svg" },
-    { name: "NumPy", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" },
-    { name: "Pandas", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" }
-    ,{ name: "Matplotlib", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" }
-    ,{ name: "Seaborn", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" }
+  // Skills grouped by category, mirroring the resume
+  const icon = (path) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${path}`;
+  const skillGroups = [
+    {
+      category: "Programming Languages",
+      items: [
+        { name: "C++", img: icon("cplusplus/cplusplus-original.svg") },
+        { name: "Java", img: icon("java/java-original.svg") },
+        { name: "Python", img: icon("python/python-original.svg") },
+        { name: "C", img: icon("c/c-original.svg") },
+      ],
+    },
+    {
+      category: "Frontend Development",
+      items: [
+        { name: "HTML5", img: icon("html5/html5-original.svg") },
+        { name: "CSS3", img: icon("css3/css3-original.svg") },
+        { name: "JavaScript", img: icon("javascript/javascript-original.svg") },
+        { name: "React", img: icon("react/react-original.svg") },
+        { name: "Redux Toolkit", img: icon("redux/redux-original.svg") },
+        { name: "Bootstrap", img: icon("bootstrap/bootstrap-original.svg") },
+        { name: "Tailwind CSS", img: icon("tailwindcss/tailwindcss-original.svg") },
+      ],
+    },
+    {
+      category: "Backend Development",
+      items: [
+        { name: "Node.js", img: icon("nodejs/nodejs-original.svg") },
+        { name: "Express", img: icon("express/express-original.svg") },
+        { name: "REST APIs", img: icon("express/express-original.svg") },
+        { name: "Spring Framework", img: icon("spring/spring-original.svg") },
+        { name: "Spring Boot", img: icon("spring/spring-original.svg") },
+        { name: "Spring JDBC", img: icon("spring/spring-original.svg") },
+        { name: "Spring Data JPA", img: icon("spring/spring-original.svg") },
+        { name: "Spring Security", img: icon("spring/spring-original.svg") },
+        { name: "Spring AI", img: icon("spring/spring-original.svg") },
+        { name: "FastAPI", img: icon("fastapi/fastapi-original.svg") },
+        { name: "Apache Kafka", img: icon("apachekafka/apachekafka-original.svg") },
+        { name: "Socket.io", img: icon("socketio/socketio-original.svg") },
+      ],
+    },
+    {
+      category: "Databases",
+      items: [
+        { name: "MySQL", img: icon("mysql/mysql-original.svg") },
+        { name: "PostgreSQL", img: icon("postgresql/postgresql-original.svg") },
+        { name: "MongoDB", img: icon("mongodb/mongodb-original.svg") },
+        { name: "Redis", img: icon("redis/redis-original.svg") },
+      ],
+    },
+    {
+      category: "DevOps & Cloud",
+      items: [
+        { name: "Docker", img: icon("docker/docker-original.svg") },
+        { name: "Kubernetes", img: icon("kubernetes/kubernetes-original.svg") },
+        { name: "CI/CD", img: icon("githubactions/githubactions-original.svg") },
+        { name: "Git", img: icon("git/git-original.svg") },
+        { name: "GitHub", img: icon("github/github-original.svg") },
+        { name: "AWS Cloud", img: icon("amazonwebservices/amazonwebservices-original-wordmark.svg") },
+      ],
+    },
+    {
+      category: "Data Analysis",
+      items: [
+        { name: "NumPy", img: icon("numpy/numpy-original.svg") },
+        { name: "Pandas", img: icon("pandas/pandas-original.svg") },
+        { name: "Matplotlib", img: icon("matplotlib/matplotlib-original.svg") },
+        { name: "Seaborn", img: icon("python/python-original.svg") },
+        { name: "Tableau", img: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tableau.svg" },
+      ],
+    },
+    {
+      category: "AI & Machine Learning",
+      items: [
+        { name: "Machine Learning", img: icon("tensorflow/tensorflow-original.svg") },
+        { name: "Deep Learning", img: icon("pytorch/pytorch-original.svg") },
+        { name: "Generative AI", img: icon("python/python-original.svg") },
+        { name: "Agentic AI", img: icon("python/python-original.svg") },
+      ],
+    },
   ];
+
+  const coursework = ["DSA", "DBMS", "OOPS", "Operating Systems", "Computer Networks", "Machine Learning", "Software Development"];
 
     // Simple email format validation
   const validateEmail = (email) => {
@@ -277,12 +330,12 @@ export default function App() {
               
               {/* Tagline - RESPONSIVE TEXT SIZE ADJUSTED */}
               <h2 className={`text-lg sm:text-2xl md:text-3xl lg:text-4xl font-light mt-4 ${isDarkMode ? 'text-slate-300' : 'text-slate-700'}`}>
-                A passionate <span className={`font-semibold ${isDarkMode ? 'text-teal-500' : 'text-teal-700'}`}>MERN Stack Developer</span>.
+                A passionate <span className={`font-semibold ${isDarkMode ? 'text-teal-500' : 'text-teal-700'}`}>Full Stack Developer</span>.
               </h2>
 
               {/* Updated Paragraph Block - RESPONSIVE TEXT SIZE ADJUSTED */}
               <p className={`text-base sm:text-lg md:text-xl font-light max-w-3xl mx-auto leading-relaxed ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-                I specialize in building full-stack web applications using the MERN stack, ensuring scalability and performance. Coupled with my strong foundation in Data Structures and Algorithms (DSA), I write efficient, optimized code to solve complex problems effectively.
+                I build scalable full-stack applications with React, Node.js and Spring Boot — from microservices with Kafka and Redis to real-time collaborative platforms and AI-powered products. Backed by a strong foundation in Data Structures and Algorithms, I write efficient, optimized code to solve complex problems.
               </p>
             </div>
 
@@ -367,17 +420,19 @@ export default function App() {
               <div className="text-center md:text-left">
                 <h3 className={`text-2xl font-bold mb-4 ${isDarkMode ? 'text-blue-600' : 'text-teal-700'}`}>Who am I?</h3>
                 <p className={`text-base md:text-lg leading-relaxed mb-6 ${isDarkMode ? 'opacity-90' : 'text-slate-700'}`}>
-                  I am a passionate Computer Science Engineering student (B.Tech 2023-2027) at Amrita Vishwa Vidyapeetham with a CGPA of 9.09/10. My journey involves deep dives into C++ and Python problem-solving, along with hands-on MERN stack development.
+                  I am a passionate Computer Science Engineering student (B.Tech 2023-2027) at Amrita Vishwa Vidyapeetham, Coimbatore with a CGPA of 8.99/10. I work across the stack — React on the frontend, Node.js/Express and Spring Boot on the backend — and enjoy designing microservices, real-time systems and AI-driven features.
                 </p>
                 <p className={`text-base md:text-lg leading-relaxed mb-8 ${isDarkMode ? 'opacity-90' : 'text-slate-700'}`}>
-                  I have research experience as a Data Analyst, analyzing forest CO2 sequestration using Python & Tableau. I'm eager to contribute to real-world projects and grow as a full-stack developer in dynamic environments.
+                  Currently a Full Stack Developer at Arya Club, building a centralized club platform and an AI-powered Sanskrit Sloka chatbot. Previously a Data Analyst Research Intern at Amrita TAG, analyzing forest CO2 sequestration using Python & Tableau. Winner of Code Clash (IIT Hyderabad) and Semi-Finalist at Flipkart Grid 8.0, with 300+ LeetCode problems solved.
                 </p>
-                <a href="#" className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-colors font-bold shadow-md ${
-                  isDarkMode 
-                    ? 'bg-slate-200 text-slate-900 hover:bg-blue-700 hover:text-slate-100' 
+                <a
+                  href={resume}
+                  download="TVenkataramanaResume.pdf"
+                  className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg transition-colors font-bold shadow-md ${
+                  isDarkMode
+                    ? 'bg-slate-200 text-slate-900 hover:bg-blue-700 hover:text-slate-100'
                     : 'bg-white text-teal-700 border border-teal-200   hover:shadow-lg hover:bg-emerald-600 hover:text-slate-100'
                 }`}
-                onClick={()=>{ window.open(resume, "_blank"); }}
                 >
                   <Download size={18} /> Download Resume
                 </a>
@@ -396,26 +451,49 @@ export default function App() {
               <div className={`w-20 h-1 mx-auto rounded-full ${isDarkMode ? 'bg-gradient-to-r from-blue-500 to-teal-400' : 'bg-gradient-to-r from-emerald-500 to-teal-500'}`}></div>
             </div>
             
-            {/* Left Aligned Content in Card */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-              {skills.map((skill, idx) => (
-                <div key={idx} className={`flex items-center gap-4 p-4 rounded-xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${
-                  isDarkMode 
-                    ? 'bg-slate-800/50 border-slate-700 hover:border-blue-500/30' 
-                    : 'bg-white border-teal-100 hover:border-teal-300 hover:shadow-lg shadow-sm'
-                }`}>
-                  
-                  <img 
-                    src={skill.img} 
-                    alt={skill.name} 
-                    className="w-8 h-8 object-contain"
-                  />
-                  
-                  <span className={`font-semibold text-sm ${isDarkMode ? 'text-slate-200' : 'text-slate-800'}`}>
-                    {skill.name}
-                  </span>
+            {/* Skills grouped by category */}
+            <div className="space-y-10">
+              {skillGroups.map((group) => (
+                <div key={group.category}>
+                  <h3 className={`text-lg md:text-xl font-bold mb-4 flex items-center gap-3 ${isDarkMode ? 'text-blue-400' : 'text-teal-700'}`}>
+                    {group.category}
+                    <span className={`flex-1 h-px ${isDarkMode ? 'bg-slate-700' : 'bg-teal-100'}`}></span>
+                  </h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+                    {group.items.map((skill) => (
+                      <div key={skill.name} className={`flex items-center gap-4 p-4 rounded-xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${
+                        isDarkMode
+                          ? 'bg-slate-800/50 border-slate-700 hover:border-blue-500/30'
+                          : 'bg-white border-teal-100 hover:border-teal-300 hover:shadow-lg shadow-sm'
+                      }`}>
+                        <img
+                          src={skill.img}
+                          alt={skill.name}
+                          className="w-8 h-8 object-contain"
+                        />
+                        <span className={`font-semibold text-sm ${isDarkMode ? 'text-slate-200' : 'text-slate-800'}`}>
+                          {skill.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
+
+              {/* Academic Coursework */}
+              <div>
+                <h3 className={`text-lg md:text-xl font-bold mb-4 flex items-center gap-3 ${isDarkMode ? 'text-blue-400' : 'text-teal-700'}`}>
+                  Academic Coursework
+                  <span className={`flex-1 h-px ${isDarkMode ? 'bg-slate-700' : 'bg-teal-100'}`}></span>
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {coursework.map((course) => (
+                    <span key={course} className={`px-4 py-2 rounded-full text-sm font-semibold border ${
+                      isDarkMode ? 'bg-slate-800/50 border-slate-700 text-teal-300' : 'bg-white border-teal-100 text-teal-700 shadow-sm'
+                    }`}>{course}</span>
+                  ))}
+                </div>
+              </div>
             </div>
           </RevealOnScroll>
         </div>
@@ -431,8 +509,32 @@ export default function App() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { 
-                  title: "WanderLust-Travel-Platform", 
+                {
+                  title: "IntelliCart - AI-Driven Enterprise Marketplace",
+                  desc: "Scalable e-commerce ecosystem on a microservices architecture: Kafka for async inventory & notifications, an AI recommendation engine with Redis caching, JWT + RBAC security, and Order/Inventory/Payment services with consistent transactions.",
+                  tech: ["React", "Spring Boot", "FastAPI", "PostgreSQL", "Redis", "Apache Kafka", "Docker", "REST APIs"],
+                  img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
+                  link: "https://github.com/VENKATARAMANA-T/IntelliCart-AI-Powered-Enterprise-E-Commerce-Platform",
+                  github: "https://github.com/VENKATARAMANA-T/IntelliCart-AI-Powered-Enterprise-E-Commerce-Platform"
+                },
+                {
+                  title: "AI Chat Application with Persistent Conversations",
+                  desc: "Multi-threaded real-time chat with persistent session history, Google OAuth + JWT authorization, automated DB persistence for state recovery, and document processing for PDF, image and text uploads.",
+                  tech: ["React", "Node.js", "Express", "MongoDB", "Google OAuth", "JWT", "Gemini API"],
+                  img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+                  link: "https://github.com/VENKATARAMANA-T/AI-Web-Chatbot-for-Personalized-Conversations",
+                  github: "https://github.com/VENKATARAMANA-T/AI-Web-Chatbot-for-Personalized-Conversations"
+                },
+                {
+                  title: "Real-Time Collaborative Digital Canvas",
+                  desc: "Live canvas sync with Socket.io (cursors, chat, reactions, activity feed), WebRTC meetings with screen sharing & Cloudinary recording, layered canvas with undo/redo, AI shape correction, and JWT auth with token rotation.",
+                  tech: ["React", "Socket.io", "WebRTC", "Node.js", "Express", "MongoDB", "Cloudinary", "REST APIs"],
+                  img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+                  link: "https://youtu.be/0BK6py93VlA",
+                  github: "https://github.com/VENKATARAMANA-T/Real-Time-Collaborative-Digital-Canvas"
+                },
+                {
+                  title: "WanderLust-Travel-Platform",
                   desc: "Full-Stack Travel Platform. Secure authentication (Passport.js), RESTful APIs, Cloudinary storage, and interactive maps (Mapbox).", 
                   tech: ["Node.js", "Express", "MongoDB", "EJS"], 
                   img: WanderLust, 
@@ -454,22 +556,6 @@ export default function App() {
                   img:Disaster, 
                   link: "https://github.com/VENKATARAMANA-T/Disaster-Response-System", 
                   github: "https://github.com/VENKATARAMANA-T/Disaster-Response-System" 
-                },
-                {
-                  title: "Full-Stack AI Chat Application",
-                  desc: "Built a real-time multi-thread chat app with persistent conversations, Google OAuth + JWT auth, document processing, and responsive dark/light UI.",
-                  tech: ["React", "Node.js", "Express", "MongoDB", "Google OAuth", "Gemini API"],
-                  img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-                  link: "https://github.com/VENKATARAMANA-T/AI-Web-Chatbot-for-Personalized-Conversations",
-                  github: "https://github.com/VENKATARAMANA-T/AI-Web-Chatbot-for-Personalized-Conversations"
-                },
-                {
-                  title: "Real-Time Collaborative Digital Canvas",
-                  desc: "Engineered a collaborative canvas platform with live sync, WebRTC meetings, role-based access, JWT auth, and AI-assisted workflows.",
-                  tech: ["Socket.io", "WebRTC", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Cloudinary", "RAG"],
-                  img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
-                  link: "https://youtu.be/0BK6py93VlA",
-                  github: "https://github.com/VENKATARAMANA-T/Real-Time-Collaborative-Digital-Canvas"
                 },
                 {
                   title: "EmpSphere - Employee Intelligence Platform",
@@ -540,16 +626,29 @@ export default function App() {
               <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Experience</h2>
               <div className={`w-20 h-1 mx-auto rounded-full ${isDarkMode ? 'bg-gradient-to-r from-blue-500 to-teal-400' : 'bg-gradient-to-r from-emerald-500 to-teal-500'}`}></div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
                   type: "work",
-                  title: "Full Stack Development Intern",
+                  title: "Full Stack Developer",
                   place: "Arya Club",
                   date: "Dec 2025 - Present",
-                  desc: "Built a centralized platform with a high-performance responsive UI, and developed a secure backend with optimized database indexing to reduce latency and improve scalability."
+                  desc: "Developed a centralized Arya Club platform with a responsive frontend, secure backend, member management and event management features. Currently building an AI-powered Sanskrit Sloka chatbot for meanings, explanations and learning."
                 },
-                { type: "work", title: "Research Scholar - Data Analyst", place: "Coimbatore, Tamil Nadu", date: "Aug 2024 - Apr 2025", desc: "Analyzed forest and tree types across India to study CO2 sequestration potential. Used Matplotlib, Seaborn, and Tableau for visualization." }
+                {
+                  type: "work",
+                  title: "Data Analyst Research Intern",
+                  place: "Amrita TAG, Coimbatore",
+                  date: "Aug 2024 - Apr 2025",
+                  desc: "Processed and visualized Indian forest records using Matplotlib, Seaborn and Tableau, quantifying CO2 sequestration across diverse biomes. Recommended suitable tree species for regional carbon absorption and sustainable management."
+                },
+                {
+                  type: "education",
+                  title: "B.Tech - Computer Science & Engineering",
+                  place: "Amrita Vishwa Vidyapeetham, Coimbatore",
+                  date: "2023 - 2027",
+                  desc: "CGPA 8.99/10. Coursework in Data Structures & Algorithms, DBMS, OOPS, Operating Systems, Computer Networks, Machine Learning and Software Development."
+                }
               ].map((item, index) => (
                 <div key={index} className={`p-6 rounded-xl border transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
                     isDarkMode 
@@ -578,8 +677,72 @@ export default function App() {
         </div>
       </section>
 
+      {/* Achievements & Certifications */}
+      <section id="achievements" className={`py-12 md:py-20 ${isDarkMode ? 'bg-slate-800/50' : 'bg-transparent'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <RevealOnScroll>
+            <div className="text-center mb-10 md:mb-16">
+              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Achievements & Certifications</h2>
+              <div className={`w-20 h-1 mx-auto rounded-full ${isDarkMode ? 'bg-gradient-to-r from-blue-500 to-teal-400' : 'bg-gradient-to-r from-emerald-500 to-teal-500'}`}></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Achievements */}
+              <div>
+                <h3 className={`text-xl font-bold mb-6 flex items-center gap-2 ${isDarkMode ? 'text-blue-400' : 'text-teal-700'}`}>
+                  <Trophy size={22} /> Awards & Achievements
+                </h3>
+                <div className="space-y-4">
+                  {[
+                    { icon: Trophy, title: "Winner - Code Clash", sub: "Conducted by IIT Hyderabad" },
+                    { icon: Award, title: "Semi-Finalist - Flipkart Grid 8.0", sub: "National-level engineering challenge" },
+                    { icon: Code2, title: "300+ Problems Solved on LeetCode", sub: "Strong foundation in DSA & problem solving" },
+                  ].map((item) => (
+                    <div key={item.title} className={`flex items-start gap-4 p-5 rounded-xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                      isDarkMode ? 'bg-slate-900 border-slate-700 hover:border-blue-500/50' : 'bg-white border-teal-100 shadow-sm hover:border-teal-300'
+                    }`}>
+                      <div className={`p-3 rounded-full shrink-0 ${isDarkMode ? 'bg-blue-500/20 text-blue-300' : 'bg-emerald-100 text-emerald-700'}`}>
+                        <item.icon size={20} />
+                      </div>
+                      <div>
+                        <h4 className={`font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>{item.title}</h4>
+                        <p className={`text-sm mt-1 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>{item.sub}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Certifications */}
+              <div>
+                <h3 className={`text-xl font-bold mb-6 flex items-center gap-2 ${isDarkMode ? 'text-blue-400' : 'text-teal-700'}`}>
+                  <GraduationCap size={22} /> Certifications
+                </h3>
+                <div className="space-y-4">
+                  {[
+                    { title: "Full Stack Development", sub: "Apna College" },
+                    { title: "Generative AI & Natural Language Processing", sub: "Google" },
+                  ].map((item) => (
+                    <div key={item.title} className={`flex items-start gap-4 p-5 rounded-xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                      isDarkMode ? 'bg-slate-900 border-slate-700 hover:border-blue-500/50' : 'bg-white border-teal-100 shadow-sm hover:border-teal-300'
+                    }`}>
+                      <div className={`p-3 rounded-full shrink-0 ${isDarkMode ? 'bg-blue-500/20 text-blue-300' : 'bg-emerald-100 text-emerald-700'}`}>
+                        <Award size={20} />
+                      </div>
+                      <div>
+                        <h4 className={`font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>{item.title}</h4>
+                        <p className={`text-sm mt-1 ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>{item.sub}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </section>
+
       {/* Contact */}
-      <section id="contact" className={`py-12 md:py-20 ${isDarkMode ? 'bg-slate-800/50' : 'bg-transparent'}`}>
+      <section id="contact" className="py-12 md:py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <RevealOnScroll>
             <div className="text-center mb-10 md:mb-16">
